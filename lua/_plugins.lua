@@ -6,12 +6,7 @@ local install_path =
     fn.stdpath "data" ..
     "/site/pack/packer/start/packer.nvim"
 if
-    fn.empty(
-        fn.glob(
-            install_path
-        )
-    ) >
-        0
+    fn.empty( fn.glob( install_path)) > 0
  then
     PACKER_BOOTSTRAP =
         fn.system {
@@ -71,9 +66,7 @@ return packer.startup(
         use "mattn/emmet-vim"
         use "github/copilot.vim"
         use "xiyaowong/nvim-transparent"
-
         use "simrat39/rust-tools.nvim"
-
         use "cespare/vim-toml"
         use "NoahTheDuke/vim-just"
         use "elzr/vim-json"
@@ -120,7 +113,8 @@ return packer.startup(
         use "hrsh7th/cmp-nvim-lsp"
 
         -- snippets
-        use "L3MON4D3/LuaSnip" --snippet engine
+        use 'SirVer/ultisnips'
+        use 'quangnguyen30192/cmp-nvim-ultisnips'
         use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
         -- LSP
@@ -144,14 +138,9 @@ return packer.startup(
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
-        if
-            PACKER_BOOTSTRAP
+        if PACKER_BOOTSTRAP
          then
-            require(
-                "packer"
-            ).sync(
-
-            )
+            require( "packer").sync()
         end
     end
 )

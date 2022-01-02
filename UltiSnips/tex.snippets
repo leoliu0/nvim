@@ -1,3 +1,9 @@
+global !p
+import re
+def norm(s):
+		return '_'.join(re.findall('\w+', s.lower()))
+endglobal
+
 snippet fn
 \footnote{$1}
 endsnippet
@@ -23,7 +29,7 @@ snippet it
 endsnippet
 
 snippet sec
-\section{$1}
+\section{$1}\label{`!p snip.rv=norm(t[1])`}
 endsnippet
 
 snippet ssec
@@ -37,6 +43,10 @@ endsnippet
 snippet tb
 \begin{table}
 	\footnotesize
-	\caption{$1}
+	\caption{$1\label{`!p snip.rv=norm(t[1])`}}
+	\parbox{\textwidth}{$2}
+	\begin{tabular}{lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}l}
+		\input{tables/ss.tex}\\
+	\end{tabular}
 \end{table}
 endsnippet
