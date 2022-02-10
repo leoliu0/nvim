@@ -44,6 +44,9 @@ keymap("n", "m", ":w!<CR>", opts)
 keymap("n", "zz", ":wq<CR>", opts)
 keymap("n", "zx", ":q!<CR>", opts)
 
+-- spell check
+keymap("n", "<F9>", ":setlocal spell spelllang=en_us<CR>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 -- keymap( "i", "jk", "<ESC>", opts)

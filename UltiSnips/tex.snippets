@@ -33,7 +33,7 @@ snippet sec
 endsnippet
 
 snippet ssec
-\subsection{$1}
+\subsection{$1}\label{`!p snip.rv=norm(t[1])`}
 endsnippet
 
 snippet sssec
@@ -46,7 +46,25 @@ snippet tb
 	\caption{$1\label{`!p snip.rv=norm(t[1])`}}
 	\parbox{\textwidth}{$2}
 	\begin{tabular}{lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}l}
-		\input{tables/ss.tex}\\
+		\input{$3}\\\\
 	\end{tabular}
 \end{table}
+endsnippet
+
+snippet fg
+\begin{figure}[!ht]
+	\footnotesize
+	\caption{$1\label{`!p snip.rv=norm(t[1])`}}
+	\parbox{\textwidth}{This figure $2}
+	\vspace{0.3cm}
+	\includegraphics[scale=0.35]{tables/$3}\\\\
+\end{figure}
+endsnippet
+
+snippet pb
+  \parbox{\textwidth}{$1}
+endsnippet
+
+snippet hl
+  \hline
 endsnippet
