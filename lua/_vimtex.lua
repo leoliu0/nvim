@@ -3,6 +3,19 @@ let &rtp = '~/.local/plugged/vimtex,' . &rtp
 let &rtp .= ',~/.local/plugged/vimtex/after'
 filetype plugin indent on
 syntax enable
+let g:vimtex_compiler_latexmk = {
+        \ 'build_dir' : '',
+        \ 'callback' : 1,
+        \ 'continuous' : 0,
+        \ 'executable' : 'latexmk',
+        \ 'hooks' : [],
+        \ 'options' : [
+        \   '-verbose',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
 
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_ignore_filters = [
@@ -15,6 +28,7 @@ let g:vimtex_quickfix_ignore_filters = [
 			\ '.*Warning.*',
 			\ '.*hbox.*',
 			\]
+" let g:vimtex_compiler_method='tectonic'
 
 nnoremap <Space>fr o\begin{frame}<Enter>\frametitle{}<Enter>\end{frame}<Enter><++><Esc>kkf}i
 nnoremap <Space>fi i\begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA

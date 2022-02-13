@@ -37,7 +37,7 @@ autocmd BufWritePre *.py silent! lua vim.lsp.buf.formatting()
 
 autocmd FileType py map ,, <leader>r
 autocmd FileType rs map ,, <leader>r
-autocmd FileType tex nmap ,, <plug>(vimtex-compile)
+autocmd FileType tex nmap m :w!<CR><plug>(vimtex-compile)
 autocmd FileType tex nmap ` <plug>(vimtex-view)
 autocmd FileType html,css nmap ,, <C-y>,
 autocmd FileType ms nmap ,, !pdf %
