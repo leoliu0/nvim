@@ -34,6 +34,7 @@ autocmd VimLeave config.h !sudo make clean install
 autocmd VimLeave *.tex !just todo
 autocmd BufWritePre *.tex,*.txt silent! s/\s\./\./g
 autocmd BufWritePre *.py silent! lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.html silent! lua vim.lsp.buf.formatting()
 
 autocmd FileType py map ,, <leader>r
 autocmd FileType rs map ,, <leader>r

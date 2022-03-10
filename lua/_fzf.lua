@@ -1,5 +1,11 @@
 local actions = require "fzf-lua.actions"
 require'fzf-lua'.setup {
+  winopts = {
+    height           = 0.95,            -- window height
+    width            = 0.95,            -- window width
+    row              = 0.35,            -- window row position (0=top, 1=bottom)
+    col              = 0.50,            -- window col position (0=left, 1=right)
+    },
 actions = {
     -- These override the default tables completely
     -- no need to set to `false` to disable an action
@@ -19,6 +25,6 @@ actions = {
       ["ctrl-v"]      = actions.file_vsplit,
       ["default"]      = actions.file_tabedit,
       ["alt-q"]       = actions.file_sel_to_qf,
-    }
+    },
   }
 }

@@ -62,6 +62,7 @@ return packer.startup(function(use)
 		run = "./install --bin",
 	})
 	use("junegunn/fzf.vim")
+  use('windwp/nvim-ts-autotag')
 
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
