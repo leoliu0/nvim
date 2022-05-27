@@ -6,7 +6,7 @@ syntax enable
 let g:vimtex_compiler_latexmk = {
         \ 'build_dir' : '',
         \ 'callback' : 1,
-        \ 'continuous' : 0,
+        \ 'continuous' : 1,
         \ 'executable' : 'latexmk',
         \ 'hooks' : [],
         \ 'options' : [
@@ -30,7 +30,6 @@ let g:vimtex_quickfix_ignore_filters = [
 			\]
 " let g:vimtex_compiler_method='tectonic'
 
-nnoremap <Space>fr o\begin{frame}<Enter>\frametitle{}<Enter>\end{frame}<Enter><++><Esc>kkf}i
 nnoremap <Space>fi i\begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA
 nnoremap <Space>fg i\begin{figure}<Enter>\caption{<++>}<Enter>\includegraphics[scale=0.<++>]{<++>.png}\\<Enter>\end{figure}<Esc>4k
 nnoremap <Space>pb o\parbox{\textwidth}{}<Esc>i

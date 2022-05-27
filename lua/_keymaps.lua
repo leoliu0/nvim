@@ -41,7 +41,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- save and quit with ease
 keymap("n", "m", ":w!<CR>", opts)
-keymap("n", "zz", ":wq<CR><CR>", opts)
+keymap("n", "zz", ":wq!<CR><CR>", opts)
 keymap("n", "zx", ":q!<CR>", opts)
 
 -- spell check

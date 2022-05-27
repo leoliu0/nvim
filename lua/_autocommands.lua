@@ -33,13 +33,13 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 autocmd VimLeave config.h !sudo make clean install
 autocmd VimLeave *.tex !just todo
 autocmd BufWritePre *.tex,*.txt silent! s/\s\./\./g
-autocmd BufWritePre *.py silent! lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.html silent! lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.html,*.lua,*.tex silent! lua vim.lsp.buf.formatting()
 
 autocmd FileType py map ,, <leader>r
 autocmd FileType rs map ,, <leader>r
-autocmd FileType tex nmap m :w!<CR><plug>(vimtex-compile)
-autocmd FileType tex nmap ` <plug>(vimtex-view)
+autocmd FileType tex nmap ,, :w!<CR>:VimtexCompile<CR>
+autocmd FileType tex nmap ` :VimtexView<CR>
 autocmd FileType html,css nmap ,, <C-y>,
 autocmd FileType ms nmap ,, !pdf %
 autocmd BufNewFile,BufRead *.ms nmap ,, m:!pdf %<ENTER><ENTER>
