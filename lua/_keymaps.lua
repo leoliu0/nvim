@@ -40,7 +40,7 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- save and quit with ease
-keymap("n", "m", ":w!<CR>", opts)
+keymap("n", "m", ":w<CR>", opts)
 keymap("n", "zz", ":wq!<CR><CR>", opts)
 keymap("n", "zx", ":q!<CR>", opts)
 

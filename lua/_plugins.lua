@@ -43,6 +43,9 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- Additions
+
+use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use("fatih/vim-go")
  use("lervag/vimtex")
  use("rust-lang/rust.vim")
  use("simrat39/rust-tools.nvim")

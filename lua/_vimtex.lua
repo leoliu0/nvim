@@ -1,8 +1,6 @@
 vim.cmd [[
-let &rtp = '~/.local/plugged/vimtex,' . &rtp
-let &rtp .= ',~/.local/plugged/vimtex/after'
-filetype plugin indent on
-syntax enable
+" let &rtp = '~/.local/plugged/vimtex,' . &rtp
+" let &rtp .= ',~/.local/plugged/vimtex/after'
 let g:vimtex_compiler_latexmk = {
         \ 'build_dir' : '',
         \ 'callback' : 1,

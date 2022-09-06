@@ -5,6 +5,7 @@ vim.cmd([[
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
+    autocmd InsertEnter,InsertLeave * set cul!
   augroup end
 
   augroup _git
@@ -32,12 +33,19 @@ vim.cmd([[
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 autocmd VimLeave config.h !sudo make clean install
 autocmd VimLeave *.tex !just todo
-autocmd BufWritePre *.tex,*.txt silent! s/\s\./\./g
-autocmd BufWritePre *.py execute ':Black'
-autocmd BufWritePre *.html,*.lua,*.tex silent! lua vim.lsp.buf.formatting()
+augroup prewrites
+    autocmd!
+    autocmd FileWritePre *.tex :%s/\s\+$//e | %s/\r$//e | %s/\s\./\./e
+    autocmd FileWritePre *.tex silent! lua vim.lsp.buf.formatting()
+augroup END 
+autocmd BufWrite *.py execute ':Black'
+autocmd BufWrite *.html,*.lua silent! lua vim.lsp.buf.formatting()
 
 autocmd FileType py map ,, <leader>r
 autocmd FileType rs map ,, <leader>r
+autocmd FileType go map ,, :GoRun<CR>
+autocmd FileType sil map ,, :!sile %<CR><CR>
+autocmd FileType v map ,, :!v run %
 autocmd FileType tex nmap ,, :w!<CR>:VimtexCompile<CR>
 autocmd FileType tex nmap ` :VimtexView<CR>
 autocmd FileType html,css nmap ,, <C-y>,

@@ -9,13 +9,15 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
+require'lspconfig'.gopls.setup{}
+
 local util = require 'lspconfig.util'
 
--- set the path to the vls installation;
-local vls_root_path = "/home/leo/bin/vls"
-local vls_binary = "/home/leo/bin/vls/bin/vls"
+require'lspconfig'.vls.setup{
+    root_dir = util.root_pattern('v.mod', '.git','.v'),
+}
 
-require 'lspconfig'.vls.setup({ cmd = { vls_binary }, filetypes = { "vlang" }, root_dir=util.root_pattern('') })
+require("nvim-lsp-installer").setup{}
 
 require'lspconfig'.texlab.setup{settings = {
   texlab = {

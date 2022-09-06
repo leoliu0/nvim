@@ -61,11 +61,15 @@ endsnippet
 
 snippet \tb
 \begin{table}
-	\footnotesize
+	\footnotesize\centering
 	\caption{$1\label{`!p snip.rv=norm(t[1])`}}
 	\parbox{\textwidth}{$2}
+	
+	\vspace{.3cm}
 	\begin{tabular}{lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}l}
+		\hline
 		\input{$3}\\\\
+		\hline
 	\end{tabular}
 \end{table}
 endsnippet
