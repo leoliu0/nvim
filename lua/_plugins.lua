@@ -45,6 +45,7 @@ return packer.startup(function(use)
   -- Additions
 
 use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use('gko/vim-coloresque')
   use("fatih/vim-go")
  use("lervag/vimtex")
  use("rust-lang/rust.vim")
