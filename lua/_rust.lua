@@ -1,4 +1,15 @@
-require("rust-tools").setup({})
+local rt = require("rust-tools")
+
+rt.setup({
+  server = {
+    settings = {
+      ["rust-analyzer"] = {
+        inlayHints = { locationLinks = false },
+      },
+    },
+  },
+})
+
 require("transparent").setup({
   enable = false, -- boolean: enable transparent
 })
