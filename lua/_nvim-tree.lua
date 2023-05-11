@@ -36,9 +36,5 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup {
   open_on_tab = false,
   view = {
-  mappings = {
-      custom_only = false,
-      list = {{ key = "<CR>", action = "tabnew" }},
-    }
   }
 }

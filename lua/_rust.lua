@@ -10,9 +10,7 @@ rt.setup({
   },
 })
 
-require("transparent").setup({
-  enable = false, -- boolean: enable transparent
-})
+require("transparent").setup({ })
 
 require'nvim-treesitter.configs'.setup {
   context_commentstring = {
@@ -21,6 +19,8 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require'lspconfig'.gopls.setup{}
+
+require'lspconfig'.typst_lsp.setup{}
 
 local util = require 'lspconfig.util'
 

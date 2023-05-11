@@ -72,7 +72,19 @@ use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
  use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
-}-- use('mattn/vim-lsp-settings')
+}
+    use {'kaarmu/typst.vim', ft = {'typst'}}
+
+use { "zbirenbaum/copilot.lua" }
+use {
+  "zbirenbaum/copilot-cmp",
+  after = { "copilot.lua" },
+  config = function ()
+    require("copilot_cmp").setup()
+  end
+}
+
+-- use('mattn/vim-lsp-settings')
 
   -- My plugins here
   use("wbthomason/packer.nvim") -- Have packer manage itself

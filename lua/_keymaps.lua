@@ -19,6 +19,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+keymap("n", "tt", ":!tectonic %<CR><CR>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
