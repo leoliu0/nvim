@@ -6,6 +6,8 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
+vim.api.nvim_command("set commentstring=//%s")
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("tex_maps"),
   pattern = { "tex", "bib" },
@@ -14,3 +16,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.keymap.set("n", "`", "<cmd>VimtexView<CR>", { noremap = true })
   end,
 })
+
+require("luasnip.loaders.from_snipmate").lazy_load()

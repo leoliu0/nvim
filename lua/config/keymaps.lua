@@ -7,8 +7,18 @@ local map = Util.safe_keymap_set
 
 map("n", "zz", "<cmd>wq!<CR>", { noremap = true })
 map("n", "zx", "<cmd>q!<CR>", { noremap = true })
+map("v", "s", "c", {})
+vim.keymap.set("n", "s", "cl", {})
+vim.keymap.set("n", "m", "<cmd>w!<cr>", {})
 
 vim.cmd([[
+
+set nocompatible
+set runtimepath^=~/.local/share/nvim/lazy/vimtex/
+set runtimepath^=~/.local/share/nvim/lazy/vimtex/after
+filetype plugin indent on
+syntax enable
+
 let g:vimtex_quickfix_ignore_filters = [
 			\ 'overfull',
 			\ 'underfull', ]
@@ -19,5 +29,7 @@ let g:vimtex_quickfix_ignore_filters = [
 			\ '.*Warning.*',
 			\ '.*hbox.*',
 			\]
+
+let g:vimtex_view_method = 'zathura'
 
 ]])

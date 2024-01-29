@@ -1,0 +1,74 @@
+snippet \fn 
+	\footnote{$1}
+
+snippet \ct
+	\cite{$1}
+
+snippet \rf
+	\ref{$1}
+
+snippet \vs
+	\vspace{$1cm}
+
+snippet \hs
+	\hspace{$1cm}
+
+snippet \bf
+	\textbf{$1}
+
+snippet \it
+	\textit{$1}
+
+snippet \sec
+	\section{$1}\label{`!p snip.rv=norm(t[1])`}
+
+snippet \ssec
+	\subsection{$1}\label{`!p snip.rv=norm(t[1])`}
+
+snippet \sssec
+	\subsubsection{$1}
+
+snippet \fr
+	\begin{frame}
+		\frametitle{}
+    	\begin{itemize}
+    		\item 
+    	\end{itemize}
+	\end{frame}
+
+snippet \ul
+	\begin{itemize}
+		\item 
+	\end{itemize}
+
+snippet \tb
+	\begin{table}
+		\footnotesize\centering
+		\caption{$1\label{`!p snip.rv=norm(t[1])`}}
+		\parbox{\textwidth}{$2. T-statistics adjusted for clustered standard errors at XXX level are reported in the parentheses. ***, **, * indicates significance level at 1\%, 5\% and 10\%. All potentially unbounded variables are winsorised at 1\% level. The sample period is XXX to XXX.}
+		
+		\bigskip
+		\begin{tabular}{lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}lr@{}l}
+			\input{$3}\\\\
+		\end{tabular}
+	\end{table}
+
+snippet \fg
+	\begin{figure}[!ht]
+		\footnotesize
+		\caption{$1\label{`!p snip.rv=norm(t[1])`}}
+		\parbox{\textwidth}{This figure $2}
+		\vspace{0.3cm}
+		\includegraphics[scale=0.35]{tables/$3}\\\\
+	\end{figure}
+
+snippet \pb
+  \parbox{\textwidth}{$1}
+
+snippet \eq
+	\begin{equation}
+		$1
+	\end{equation}
+
+snippet \hl
+  \hline
