@@ -17,4 +17,4 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-require("luasnip.loaders.from_snipmate").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load({ paths = "~/.config/nvim/snippets" })

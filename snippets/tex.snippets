@@ -1,10 +1,10 @@
-snippet \fn 
+snippet \fn footnote
 	\footnote{$1}
 
-snippet \ct
+snippet \ct cite
 	\cite{$1}
 
-snippet \rf
+snippet \rf rf
 	\ref{$1}
 
 snippet \vs
@@ -41,10 +41,10 @@ snippet \ul
 		\item 
 	\end{itemize}
 
-snippet \tb
+snippet \tb tb
 	\begin{table}
 		\footnotesize\centering
-		\caption{$1\label{`!p snip.rv=norm(t[1])`}}
+		\caption{$1\label{$2}}
 		\parbox{\textwidth}{$2. T-statistics adjusted for clustered standard errors at XXX level are reported in the parentheses. ***, **, * indicates significance level at 1\%, 5\% and 10\%. All potentially unbounded variables are winsorised at 1\% level. The sample period is XXX to XXX.}
 		
 		\bigskip
@@ -53,7 +53,7 @@ snippet \tb
 		\end{tabular}
 	\end{table}
 
-snippet \fg
+snippet \fg figure
 	\begin{figure}[!ht]
 		\footnotesize
 		\caption{$1\label{`!p snip.rv=norm(t[1])`}}
@@ -62,13 +62,13 @@ snippet \fg
 		\includegraphics[scale=0.35]{tables/$3}\\\\
 	\end{figure}
 
-snippet \pb
+snippet \pb parbox
   \parbox{\textwidth}{$1}
 
-snippet \eq
+snippet \eq equation
 	\begin{equation}
 		$1
 	\end{equation}
 
-snippet \hl
+snippet \hl hline
   \hline
