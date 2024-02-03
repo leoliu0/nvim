@@ -13,6 +13,8 @@ vim.keymap.set("v", "s", "c", { noremap = true })
 vim.keymap.set("n", "m", "<cmd>w!<cr>", { noremap = true })
 vim.keymap.set("n", "<C-/>", "gcc", { remap = true })
 vim.keymap.set("v", "<C-/>", "gc", { remap = true })
+vim.keymap.set("v", "<leader>9", "c(<esc>p", { remap = true })
+vim.keymap.set("v", "<leader>'", "c'<esc>p", { remap = true })
 
 vim.cmd([[
 
